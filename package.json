@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@iannisz/node-api-kit": "^0.0.5",
+    "@types/node": "^16.11.11",
+    "page-compiler": "^0.1.7"
+  }
+}
