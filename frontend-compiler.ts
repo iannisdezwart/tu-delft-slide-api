@@ -31,7 +31,7 @@ const main = async () => {
 			</div>
 
 			<div class="input-container">
-				<button onclick="submit()">Submit</button>
+				<button onclick="submit()">Generate</button>
 			</div>
 
 			<div id="preview"></div>
