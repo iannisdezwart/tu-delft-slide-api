@@ -39,6 +39,7 @@ api.post('/', async (req, res) => {
 
 	const html = await generateSlide(body)
 	const page = await browser.newPage()
+	page.setJavaScriptEnabled(false)
 	console.log(`(${ id }) Opened page`)
 
 	// @ts-ignore
