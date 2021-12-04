@@ -1,7 +1,11 @@
-import { SlideInfo } from './index'
-import { inlineSVG } from 'page-compiler'
+import { SlideInfo } from './api'
+import { importGoogleFont, inlineSASS, inlineSVG } from 'page-compiler'
 
-export const generateSlide = (body: SlideInfo) => /* html */ `
+export const generateSlide = async (body: SlideInfo) => /* html */ `
+${ await importGoogleFont('Playfair Display', [ { weight: 700 } ]) }
+${ await importGoogleFont('Open Sans', [ { weight: 400 } ]) }
+${ await inlineSASS('res/slide.sass') }
+
 <div class="slide">
 	<div class="left-bar">
 		${ inlineSVG('res/tu-delft-logo-white.svg', { id: 'white-logo' }) }
@@ -14,7 +18,7 @@ export const generateSlide = (body: SlideInfo) => /* html */ `
 		</div>
 
 		<div class="logo-section">
-			${ inlineSVG('res/tu-delft-logo-colour', { id: 'colour-logo' }) }
+			${ inlineSVG('res/tu-delft-logo-colour.svg', { id: 'colour-logo' }) }
 			<p>${ body.universitySubtitle }</p>
 		</div>
 	</div>
